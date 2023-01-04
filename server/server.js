@@ -32,6 +32,5 @@ io.on('connection', (socket) => {
     modifyUserList(newUsers);
     const selectedUser = users.find((item) => item.id === socket.id);
     io.emit('user-left', selectedUser.username);
-    console.log(`Lol, socket with an id ${socket.id} left`);
   });
 });

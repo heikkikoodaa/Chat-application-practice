@@ -71,12 +71,23 @@ sendMessageForm.addEventListener('submit', (e) => {
 });
 
 const checkMessage = (message) => {
+  if (message.startsWith('!') && message.toLowerCase() === '!exit') {
+    socket.disconnect();
+    alert('You have left the chat!');
+    newMessageInput.value = '';
+    sendMessageForm.classList.add('hidden');
+    joinRoomForm.classList.add('hidden');
+    return;
+  }
   let regex = new RegExp(forbiddenWords.join('|'), 'gi');
   return message.replace(regex, '****');
 };
 
 const newMessage = (message, sender = '') => {
   const filteredMessage = checkMessage(message);
+  if (!filteredMessage) {
+    return;
+  }
   if (sender) {
     appendMessage(`${sender}: ${filteredMessage}`);
     socket.timeout(5000).emit('new-message', filteredMessage, sender);
