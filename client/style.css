@@ -25,15 +25,19 @@ body {
   overflow: auto;
 }
 
-#message-window p {
-  padding: 1rem 0 0 1rem;
+#messages {
+  padding: 1rem;
+}
+
+#messages p {
+  padding: 0.25rem;
 }
 
 #welcome-banner {
   background-color: #fce762;
   color: black;
   text-align: center;
-  padding: 0.5rem;
+  padding: 1rem 0;
 }
 
 #container {

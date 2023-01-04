@@ -2,6 +2,7 @@ import { io } from 'socket.io-client';
 import { users } from './users';
 
 const messageWindow = document.getElementById('message-window');
+const messages = document.getElementById('messages');
 const welcomeBanner = document.getElementById('welcome-banner');
 const sendMessageForm = document.getElementById('send-message-form');
 const onlineUsers = document.getElementById('online-users');
@@ -39,29 +40,27 @@ socket.on('connect', () => {
   welcomeBanner.innerText = `Welcome to the chatroom!\n Your unique chatID is ${socket.id}\n Your username is ${username}`;
   socket.emit('user-join', username);
   newMessage(`Welcome to the chatroom ${username}`);
-  updateOnlineUsers();
+  // updateOnlineUsers();
 });
 
 socket.on('send-message', (incomingMessage) => {
-  const p = document.createElement('p');
-  p.innerText = incomingMessage;
-  messageWindow.appendChild(p);
+  appendMessage(incomingMessage);
 });
 
 socket.on('user-left', (username) => {
   appendMessage(`User ${username} went offline!`);
-  updateOnlineUsers();
+  // updateOnlineUsers();
 });
 
 const appendMessage = (msg) => {
   const p = document.createElement('p');
   p.innerText = msg;
-  messageWindow.appendChild(p);
+  messages.appendChild(p);
 };
 
-const updateOnlineUsers = () => {
-  console.log(users);
-};
+// const updateOnlineUsers = () => {
+//   console.log(users);
+// };
 
 sendMessageForm.addEventListener('submit', (e) => {
   e.preventDefault();
