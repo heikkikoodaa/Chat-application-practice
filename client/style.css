@@ -7,14 +7,9 @@
 }
 
 html {
-  height: 100%;
   background: #1b1b1b;
   color: rgb(243, 243, 243);
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-}
-
-body {
-  min-height: 100%;
 }
 
 .hidden {
@@ -45,8 +40,6 @@ body {
 }
 
 #container {
-  width: 50vw;
-  height: 50vh;
   gap: 1rem;
   display: flex;
   flex-direction: column;
