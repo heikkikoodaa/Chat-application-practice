@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Awesome Websocket Chat Room!</title>
+  </head>
+  <body>
+    <div id="message-window">
+      <p id="welcome-banner">Welcome to the chatroom!</p>
+    </div>
+    <div id="container">
+      <form id="send-message-form">
+        <span>Send message</span>
+        <input type="text" id="new-message" />
+        <button id="send-message-button">Send message</button>
+      </form>
+      <form id="join-room-form">
+        <span>Join a room</span>
+        <input type="text" id="join-room" />
+        <button id="join-room-button">Join room</button>
+      </form>
+    </div>
+    <div id="online-users"></div>
+    <script type="module" src="client.js"></script>
+  </body>
+</html>

@@ -1,0 +1,61 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+  background: #1b1b1b;
+  color: rgb(243, 243, 243);
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+body {
+  min-height: 100%;
+}
+
+#message-window {
+  border: 2px solid rgb(119, 119, 119);
+  margin: 0 4rem 1rem 4rem;
+  height: 50vh;
+  scroll-behavior: smooth;
+  overflow: auto;
+}
+
+#message-window p {
+  padding: 1rem 0 0 1rem;
+}
+
+#welcome-banner {
+  background-color: #fce762;
+  color: black;
+  text-align: center;
+  padding: 0.5rem;
+}
+
+#container {
+  width: 50vw;
+  height: 50vh;
+  gap: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 auto;
+}
+
+button {
+  border: 2px solid black;
+  border-radius: 0.5rem;
+  padding: 0.66rem;
+  background-color: #fce762;
+}
+
+input[type='text'] {
+  background-color: black;
+  border: none;
+  padding: 0.66rem;
+  color: white;
+}
